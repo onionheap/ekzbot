@@ -57,6 +57,8 @@ async function startBot() {
 
 })
 
+}
+
 startBot()
 
 const eightBallReplies = [
