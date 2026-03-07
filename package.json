@@ -1,0 +1,13 @@
+{
+  "name": "cytube-radio-bot",
+  "version": "1.0.0",
+  "description": "Cytube bot for RadioEKZ",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node bot.js"
+  },
+  "dependencies": {
+    "socket.io-client": "^4.7.2",
+    "node-fetch": "^2.6.7"
+  }
+}
