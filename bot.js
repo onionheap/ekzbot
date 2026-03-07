@@ -39,9 +39,39 @@ async function startBot() {
     })
 
     socket.on("chatMsg", (msg) => {
-        console.log(`[${msg.username}] ${msg.msg}`)
-    })
 
-}
+    const text = msg.msg.trim()
+
+    if (
+        text.toLowerCase().startsWith("eskizitinha") &&
+        text.endsWith("?")
+    ) {
+
+        const resposta = eightBallReplies[Math.floor(Math.random() * eightBallReplies.length)]
+
+        socket.emit("chatMsg", {
+            msg: `🎱 ${resposta}`
+        })
+
+    }
+
+})
 
 startBot()
+
+const eightBallReplies = [
+"Sim.",
+"Não.",
+"Talvez.",
+"Provavelmente.",
+"As chances são boas.",
+"Não conte com isso.",
+"Definitivamente sim.",
+"Definitivamente não.",
+"Pergunte novamente mais tarde.",
+"Meu palpite é sim.",
+"Meu palpite é não.",
+"Isso é um mistério.",
+"Os sinais apontam que sim.",
+"Hoje não."
+];
