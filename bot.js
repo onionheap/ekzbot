@@ -44,11 +44,12 @@ async function startBot() {
 
     socket.on("chatMsg", (msg) => {
 
-    const logLine = `[${data.username}]: ${data.msg}`;
-  console.log(logLine);
-  writeLogToGitHub(logLine);
+    const username = data.username
+  const msg = data.msg.trim()
 
-  const msg = data.msg.trim();
+  console.log(username + ": " + msg)
+
+  salvarLog(username + ": " + msg)
 
     if (
         text.toLowerCase().startsWith("eskizitinha") &&
