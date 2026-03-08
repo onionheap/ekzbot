@@ -1,3 +1,9 @@
+const fetch = require("node-fetch")
+
+const GITHUB_TOKEN = process.env.GITHUB_TOKEN
+const REPO = "onionheap/ekzbot"
+const FILE_PATH = "logs/log.txt"
+
 const io = require("socket.io-client")
 const fetch = require("node-fetch")
 const config = require("./config.json")
@@ -40,7 +46,11 @@ async function startBot() {
 
     socket.on("chatMsg", (msg) => {
 
-    const text = msg.msg.trim()
+    const logLine = `[${data.username}]: ${data.msg}`;
+  console.log(logLine);
+  writeLogToGitHub(logLine);
+
+  const msg = data.msg.trim();
 
     if (
         text.toLowerCase().startsWith("eskizitinha") &&
