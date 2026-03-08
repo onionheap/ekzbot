@@ -11,3 +11,4 @@ Eskizitinha: Hoje não.
 Eskizitinha: Sim.
 Eskizo: teste
 Eskizitinha: Provavelmente.
+Eskizitinha: Definitivamente não.
