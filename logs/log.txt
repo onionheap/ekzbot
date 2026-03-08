@@ -10,3 +10,4 @@ Eskizitinha: Não.
 Eskizitinha: Hoje não.
 Eskizitinha: Sim.
 Eskizo: teste
+Eskizitinha: Provavelmente.
