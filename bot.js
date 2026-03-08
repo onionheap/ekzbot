@@ -5,6 +5,45 @@ const FILE_PATH = "logs/log.txt"
 const io = require("socket.io-client")
 const config = require("./config.json")
 
+async function salvarLog(texto) {
+  try {
+
+    const url = `https://api.github.com/repos/${REPO}/contents/${FILE_PATH}`
+
+    // pegar arquivo atual
+    const res = await fetch(url, {
+      headers: {
+        Authorization: `token ${GITHUB_TOKEN}`,
+        "User-Agent": "eskizitinha-bot"
+      }
+    })
+
+    const data = await res.json()
+
+    const content = Buffer.from(data.content, "base64").toString("utf8")
+
+    const novoConteudo = content + "\n" + texto
+
+    const encoded = Buffer.from(novoConteudo).toString("base64")
+
+    await fetch(url, {
+      method: "PUT",
+      headers: {
+        Authorization: `token ${GITHUB_TOKEN}`,
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        message: "update log",
+        content: encoded,
+        sha: data.sha
+      })
+    })
+
+  } catch (err) {
+    console.log("Erro ao salvar log:", err)
+  }
+}
+
 async function startBot() {
 
     console.log("Obtendo servidor do Cytube...")
