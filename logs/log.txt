@@ -22,3 +22,4 @@ Eskizo: teste
 Eskizitinha: Não conta com isso não.
 Eskizitinha: Definitivamente não.
 Eskizitinha: Talvez.
+Eskizitinha: Não.
