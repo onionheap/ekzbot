@@ -105,3 +105,4 @@ Eskizitinha: Não.
 Eskizo: teste
 Eskizitinha: Não.
 Eskizitinha: Huum o universo está dizendo que não.
+Eskizo: teste
