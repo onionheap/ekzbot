@@ -87,3 +87,4 @@ Eskizo: para
 Eskizitinha: Não.
 Eskizitinha: Definitivamente não.
 Eskizitinha: Eu acho que sim mas o universo que sabe.
+Eskizo: teste
