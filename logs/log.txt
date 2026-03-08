@@ -94,3 +94,4 @@ Eskizo: teste
 Eskizitinha: Definitivamente não.
 Eskizo: teste
 Eskizitinha: As ondas da rádio apontam que é bem provável
+Eskizitinha: Talvez.
