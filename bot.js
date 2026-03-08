@@ -1,16 +1,20 @@
+const io = require("socket.io-client")
+const config = require("./config.json")
+
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN
 const REPO = "onionheap/ekzbot"
 const FILE_PATH = "logs/log.txt"
 
-const io = require("socket.io-client")
-const config = require("./config.json")
+const socket = io("https://cytu.be")
 
-async function salvarLog(texto) {
+let logQueue = []
+
+async function salvarLogs() {
+  if (logQueue.length === 0) return
+
   try {
-
     const url = `https://api.github.com/repos/${REPO}/contents/${FILE_PATH}`
 
-    // pegar arquivo atual
     const res = await fetch(url, {
       headers: {
         Authorization: `token ${GITHUB_TOKEN}`,
@@ -22,7 +26,10 @@ async function salvarLog(texto) {
 
     const content = Buffer.from(data.content, "base64").toString("utf8")
 
-    const novoConteudo = content + "\n" + texto
+    const novosLogs = logQueue.join("\n")
+    logQueue = []
+
+    const novoConteudo = content + "\n" + novosLogs
 
     const encoded = Buffer.from(novoConteudo).toString("base64")
 
@@ -39,79 +46,52 @@ async function salvarLog(texto) {
       })
     })
 
+    console.log("Logs enviados para GitHub")
+
   } catch (err) {
-    console.log("Erro ao salvar log:", err)
+    console.log("Erro ao salvar logs:", err)
   }
 }
 
-async function startBot() {
+setInterval(salvarLogs, 60000)
 
-    console.log("Obtendo servidor do Cytube...")
+socket.on("connect", () => {
+  console.log("Conectado ao Cytube")
 
-    const res = await fetch(`${config.server}/socketconfig/${config.channel}.json`)
-    const data = await res.json()
+  socket.emit("login", {
+    name: config.username,
+    pw: config.password
+  })
 
-    const socketServer = data.servers[0].url
+  socket.emit("joinChannel", {
+    name: config.channel
+  })
+})
 
-    console.log("Conectando em:", socketServer)
+socket.on("disconnect", () => {
+  console.log("Desconectado do Cytube")
+})
 
-    const socket = io(socketServer, {
-        transports: ["websocket"]
-    })
-
-    socket.on("connect", () => {
-        console.log("Conectado ao servidor Cytube")
-
-        socket.emit("joinChannel", {
-            name: config.channel
-        })
-
-        socket.emit("login", {
-            name: config.username,
-            pw: config.password
-        })
-    })
-
-    socket.on("login", (data) => {
-        if (data.success) {
-            console.log("Bot logado como", config.username)
-        } else {
-            console.log("Falha no login")
-        }
-    })
-
-    socket.on("chatMsg", (data) => {
+socket.on("chatMsg", (data) => {
 
   const username = data.username || "unknown"
   const msg = (data.msg || "").trim()
 
   console.log(username + ": " + msg)
 
-  try {
-    setTimeout(() => {
-  salvarLog(username + ": " + msg).catch(console.error)
-}, 500)
-  } catch (err) {
-    console.log("Erro ao salvar log:", err)
-  }
+  const log = `${new Date().toISOString()} | ${username}: ${msg}`
+  logQueue.push(log)
 
   if (msg.startsWith("Eskizitinha") && msg.endsWith("?")) {
-      
+
     const respostas = [
       "Sim.",
       "Não.",
       "Talvez.",
       "Provavelmente.",
-      "Tipo, as chances são boas mas quem sabe.",
-      "Não conta com isso não.",
-      "Definitivamente sim.",
-      "Definitivamente não.",
-      "Você não vai querer uma resposta para isso.",
-      "Eu acho que sim mas o universo que sabe.",
-      "Huum o universo está dizendo que não.",
-      "Isso é um mistério.",
-      "As ondas da rádio apontam que é bem provável",
-      "Hoje não."
+      "Com certeza.",
+      "Duvido muito.",
+      "Pergunte novamente mais tarde."
     ]
 
     const resposta = respostas[Math.floor(Math.random() * respostas.length)]
@@ -124,7 +104,3 @@ async function startBot() {
   }
 
 })
-
-}
-
-startBot()
