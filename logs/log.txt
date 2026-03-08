@@ -57,3 +57,4 @@ Eskizo: para.pata
 Eskizitinha: Talvez.
 Eskizitinha: Não.
 [server]: Eskizo joined (aliases: Eskizo,Sabz,Milkie,Eskizitinha)
+Eskizitinha: Não.
