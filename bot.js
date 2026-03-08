@@ -88,7 +88,9 @@ async function startBot() {
   console.log(username + ": " + msg)
 
   try {
-    salvarLog(username + ": " + msg)
+    setTimeout(() => {
+  salvarLog(username + ": " + msg).catch(console.error)
+}, 500)
   } catch (err) {
     console.log("Erro ao salvar log:", err)
   }
