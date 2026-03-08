@@ -3,7 +3,6 @@ const REPO = "onionheap/ekzbot"
 const FILE_PATH = "logs/log.txt"
 
 const io = require("socket.io-client")
-const fetch = require("node-fetch")
 const config = require("./config.json")
 
 async function startBot() {
