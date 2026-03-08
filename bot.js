@@ -1,5 +1,3 @@
-const fetch = require("node-fetch")
-
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN
 const REPO = "onionheap/ekzbot"
 const FILE_PATH = "logs/log.txt"
