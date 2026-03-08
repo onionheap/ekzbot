@@ -42,47 +42,45 @@ async function startBot() {
         }
     })
 
-    socket.on("chatMsg", (msg) => {
+    socket.on("chatMsg", (data) => {
 
-    const username = data.username
-  const msg = data.msg.trim()
+  const username = data.username
+  const msg = (data.msg || "").trim()
 
   console.log(username + ": " + msg)
 
   salvarLog(username + ": " + msg)
 
-    if (
-        text.toLowerCase().startsWith("eskizitinha") &&
-        text.endsWith("?")
-    ) {
+  if (msg.startsWith("Eskizitinha") && msg.endsWith("?")) {
 
-        const resposta = eightBallReplies[Math.floor(Math.random() * eightBallReplies.length)]
+    const respostas = [
+      "Sim.",
+      "Não.",
+      "Talvez.",
+      "Provavelmente.",
+      "Tipo, as chances são boas mas quem sabe.",
+      "Não conta com isso não.",
+      "Definitivamente sim.",
+      "Definitivamente não.",
+      "Você não vai querer uma resposta para isso.",
+      "Eu acho que sim mas o universo que sabe.",
+      "Huum o universo está dizendo que não.",
+      "Isso é um mistério.",
+      "As ondas da rádio apontam que é bem provável",
+      "Hoje não."
+    ]
 
-        socket.emit("chatMsg", {
-            msg: `${resposta}`
-        })
+    const resposta = respostas[Math.floor(Math.random() * respostas.length)]
 
-    }
+    socket.emit("chatMsg", {
+      msg: resposta,
+      meta: {}
+    })
+
+  }
 
 })
 
 }
 
 startBot()
-
-const eightBallReplies = [
-"Sim.",
-"Não.",
-"Talvez.",
-"Provavelmente.",
-"Tipo, as chances são boas mas quem sabe.",
-"Não conta com isso não.",
-"Definitivamente sim.",
-"Definitivamente não.",
-"Você não vai querer uma resposta para isso.",
-"Eu acho que sim mas o universo que sabe.",
-"Huum o universo está dizendo que não.",
-"Isso é um mistério.",
-"As ondas da rádio apontam que é bem provável",
-"Hoje não."
-];
