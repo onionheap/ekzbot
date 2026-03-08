@@ -50,7 +50,7 @@ async function startBot() {
         const resposta = eightBallReplies[Math.floor(Math.random() * eightBallReplies.length)]
 
         socket.emit("chatMsg", {
-            msg: `🎱 ${resposta}`
+            msg: `${resposta}`
         })
 
     }
@@ -66,14 +66,14 @@ const eightBallReplies = [
 "Não.",
 "Talvez.",
 "Provavelmente.",
-"As chances são boas.",
-"Não conte com isso.",
+"Tipo, as chances são boas mas quem sabe.",
+"Não conta com isso não.",
 "Definitivamente sim.",
 "Definitivamente não.",
-"Pergunte novamente mais tarde.",
-"Meu palpite é sim.",
-"Meu palpite é não.",
+"Você não vai querer uma resposta para isso.",
+"Eu acho que sim mas o universo que sabe.",
+"Huum o universo está dizendo que não.",
 "Isso é um mistério.",
-"Os sinais apontam que sim.",
+"As ondas da rádio apontam que é bem provável",
 "Hoje não."
 ];
