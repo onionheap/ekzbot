@@ -79,3 +79,4 @@ Eskizitinha: Não.
 Eskizitinha: Não conta com isso não.
 Eskizo: para
 Eskizo: teste
+[server]: Eskizo joined (aliases: Eskizo,Sabz,Milkie,Eskizitinha)
