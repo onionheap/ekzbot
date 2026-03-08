@@ -61,3 +61,4 @@ Eskizitinha: Não.
 Eskizo: para.pata
 [server]: Domremy joined (aliases: Domremy)
 Eskizo: teste
+Eskizo: para.pata
