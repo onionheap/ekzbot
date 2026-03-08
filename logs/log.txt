@@ -8,3 +8,4 @@ Eskizo: Eskitinha isso é um teste?
 Eskizo: teste
 Eskizitinha: Não.
 Eskizitinha: Hoje não.
+Eskizitinha: Sim.
