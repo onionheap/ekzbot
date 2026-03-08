@@ -45,3 +45,4 @@ Eskizo: teste
 Eskizo: teste
 Eskizitinha: Não conta com isso não.
 [server]: Eskizo joined (aliases: Eskizo,Sabz,Milkie,Eskizitinha)
+Eskizo: teste
