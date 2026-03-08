@@ -44,15 +44,19 @@ async function startBot() {
 
     socket.on("chatMsg", (data) => {
 
-  const username = data.username
+  const username = data.username || "unknown"
   const msg = (data.msg || "").trim()
 
   console.log(username + ": " + msg)
 
-  salvarLog(username + ": " + msg)
+  try {
+    salvarLog(username + ": " + msg)
+  } catch (err) {
+    console.log("Erro ao salvar log:", err)
+  }
 
   if (msg.startsWith("Eskizitinha") && msg.endsWith("?")) {
-
+      
     const respostas = [
       "Sim.",
       "Não.",
