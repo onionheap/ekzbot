@@ -12,3 +12,4 @@ Eskizitinha: Sim.
 Eskizo: teste
 Eskizitinha: Provavelmente.
 Eskizitinha: Definitivamente não.
+Eskizo: para
