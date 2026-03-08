@@ -1,3 +1,7 @@
+const io = require("socket.io-client")
+const fetch = require("node-fetch")
+const config = require("./config.json")
+
 async function startBot() {
 
     console.log("Obtendo servidor do Cytube...")
@@ -36,11 +40,7 @@ async function startBot() {
 
     socket.on("chatMsg", (msg) => {
 
-    const logLine = `[${data.username}]: ${data.msg}`;
-  console.log(logLine);
-  writeLogToGitHub(logLine);
-
-  const msg = data.msg.trim();
+    const text = msg.msg.trim()
 
     if (
         text.toLowerCase().startsWith("eskizitinha") &&
