@@ -42,14 +42,6 @@ async function startBot() {
 
     const text = msg.msg.trim()
 
-        if (message.content.toLowerCase().includes("eskizitinha, qual a fofoca")) {
-
-    const fofoca = fofocas[Math.floor(Math.random() * fofocas.length)];
-
-    message.reply(fofoca);
-
-}
-
     // 8BALL
     if (
         text.toLowerCase().startsWith("eskizitinha") &&
@@ -124,6 +116,20 @@ async function startBot() {
 
     }
 
+        client.on("messageCreate", (message) => {
+
+if (message.author.bot) return;
+
+if (message.content.toLowerCase().includes("eskizitinha, qual a fofoca")) {
+
+    const fofoca = fofocas[Math.floor(Math.random() * fofocas.length)];
+
+    message.reply(fofoca);
+
+}
+
+});
+        
 })
 
 }
