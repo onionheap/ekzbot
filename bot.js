@@ -42,6 +42,7 @@ async function startBot() {
 
     const text = msg.msg.trim()
 
+    // 8BALL
     if (
         text.toLowerCase().startsWith("eskizitinha") &&
         text.endsWith("?")
@@ -50,11 +51,12 @@ async function startBot() {
         const resposta = eightBallReplies[Math.floor(Math.random() * eightBallReplies.length)]
 
         socket.emit("chatMsg", {
-            msg: `${resposta}`
+            msg: resposta
         })
 
     }
-        // TAROT
+
+    // TAROT
     if (text.toLowerCase() === "eskizitinha, tarot!") {
 
         const tarot = [
@@ -79,8 +81,6 @@ async function startBot() {
         })
 
     }
-
-})
 
 })
 
