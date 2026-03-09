@@ -54,6 +54,33 @@ async function startBot() {
         })
 
     }
+        // TAROT
+    if (text.toLowerCase() === "eskizitinha, tarot!") {
+
+        const tarot = [
+
+            "🔮 A carta revela: más decisões estão no seu futuro.",
+            "🔮 O destino diz: hoje não é um bom dia para mandar mensagem para ex.",
+            "🔮 As cartas mostram: você vai tomar uma decisão ruim e defender ela com confiança.",
+            "🔮 O universo aconselha: evite tequila e decisões importantes hoje.",
+            "🔮 A previsão é clara: vergonha pública moderada.",
+            "🔮 As cartas indicam: amanhã você vai fingir que não lembra disso.",
+            "🔮 O destino aponta: conversa que parecia ótima às 2h da manhã.",
+            "🔮 O universo prevê: zero sabedoria, mas boas histórias.",
+            "🔮 As cartas indicam: alguém vai dizer 'olha isso' e causar caos.",
+            "🔮 O futuro mostra: decisões questionáveis à frente."
+
+        ]
+
+        const resposta = tarot[Math.floor(Math.random() * tarot.length)]
+
+        socket.emit("chatMsg", {
+            msg: resposta
+        })
+
+    }
+
+})
 
 })
 
