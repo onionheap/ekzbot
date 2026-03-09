@@ -85,6 +85,6 @@ const eightBallReplies = [
 "Não. Mas se fizer mesmo assim eu respeito.",
 "Talvez. Já deu certo com gente mais burra.",
 "Sim, mas a probabilidade é ofensiva.",
-"Não. Mas continue acreditando."
-    
+"Não. Mas continue acreditando.",
+"O Maru deve responder isso."
 ];
