@@ -40,7 +40,8 @@ async function startBot() {
 
     socket.on("chatMsg", (msg) => {
 
-    const text = msg.msg.trim()
+    if (!msg || !msg.msg) return
+const text = msg.msg.trim().toLowerCase()
 
     // 8BALL
     if (
