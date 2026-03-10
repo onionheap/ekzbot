@@ -3,9 +3,6 @@ const fetch = require("node-fetch")
 const config = require("./config.json")
 const path = require("path")
 
-// 8ball
-const eightBallReplies = require(path.join(__dirname, "frases", "8ball.json"))
-
 async function startBot() {
 
     console.log("Obtendo servidor do Cytube...")
@@ -51,7 +48,7 @@ async function startBot() {
         text.toLowerCase().startsWith("eskizitinha") &&
         text.endsWith("?")
     ) {
-
+        const eightBallReplies = require(path.join(__dirname, "frases", "8ball.json"))
         const resposta = eightBallReplies[Math.floor(Math.random() * eightBallReplies.length)]
 
         socket.emit("chatMsg", {
