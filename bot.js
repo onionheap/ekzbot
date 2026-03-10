@@ -148,36 +148,4 @@ const eightBallReplies = [
 "Sim, mas a probabilidade é ofensiva.",
 "Não. Mas continue acreditando.",
 "O Maru deve responder isso."
-]
-"🫖 FOFOCA: Madruga tentou ensinar elétrica de novo e três alunos ligaram fase no neutro.",
-"🫖 FOFOCA: Madruga foi visto olhando anúncios de Brasília vermelha pela 47ª vez hoje.",
-"🫖 FOFOCA: Dizem que o vento quase levou Madruga embora de tão magro.",
-
-"🫖 FOFOCA: Bubuki disse que estava 'apenas desenhando', mas ninguém acredita nessa versão.",
-"🫖 FOFOCA: Dizem que Bubuki perdeu 40 minutos vendo vídeo de cavalo no TikTok.",
-"🫖 FOFOCA: Há rumores de que Bubuki está desenhando algo extremamente suspeito.",
-
-"🫖 FOFOCA: Pl0xxy disse que ia abrir um servidor revolucionário… mas esqueceu de abrir.",
-"🫖 FOFOCA: Fontes dizem que Pl0xxy estava bêbado planejando um império de Minecraft.",
-"🫖 FOFOCA: Dizem que Pl0xxy teve uma ideia genial… e esqueceu qual era.",
-
-"🫖 FOFOCA: Contente disse que ia fazer um doce incrível… mas acabou no turno do McDonald's.",
-"🫖 FOFOCA: Dizem que Contente tentou vender sacolé gourmet de novo.",
-"🫖 FOFOCA: Fontes dizem que Contente está julgando todo mundo silenciosamente.",
-
-"🫖 FOFOCA: Sabz tentou ficar 5 minutos sem falar… falhou.",
-"🫖 FOFOCA: Dizem que Sabz estava dando conselho de vida para metade do chat.",
-"🫖 FOFOCA: Fontes italianas confirmam que Sabz ainda está falando.",
-
-"🫖 FOFOCA: Milkie parecia quietinha… mas soltou uma piada sombria do nada.",
-"🫖 FOFOCA: Dizem que Milkie está planejando um cosplay secreto.",
-"🫖 FOFOCA: Milkie parece inocente… mas o humor dela entrega tudo.",
-
-"🫖 FOFOCA: Alguém aqui apagou uma mensagem muito rápido.",
-"🫖 FOFOCA: Dizem que duas pessoas no chat estão flertando e fingindo que não.",
-"🫖 FOFOCA: Há um plano duvidoso sendo organizado neste chat.",
-"🫖 FOFOCA: Alguém prometeu algo e agora está tentando mudar de assunto.",
-"🫖 FOFOCA: Alguém está digitando algo que vai se arrepender.",
-"🫖 FOFOCA: Fontes totalmente confiáveis dizem que vai dar confusão."
-
-]
+];
