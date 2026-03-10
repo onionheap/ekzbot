@@ -14,7 +14,7 @@ const tarot = require("./frases/tarot.json")
 // comments
 const comments = require("./frases/comments.json")
 
-let commentsCooldown = 0
+let commentsCooldown = 5000
 
 async function startBot() {
 
