@@ -81,7 +81,7 @@ async function startBot() {
             "🔮 O universo diz: você deveria ter ficado quieto.",
             "🔮 O destino aponta: caos social leve nas próximas horas.",
             "🎴 As cartas dizem: não era isso que você deveria ter digitado.",
-            "🔮 As cartas revelam: você vai flertar e só perceber depois.",
+            "🎴 As cartas revelam: você vai flertar e só perceber depois.",
             "🔮 O destino prevê: tensão estranha no chat em 5 minutos.",
             "🔮 O universo observa: alguém aqui está sendo julgado silenciosamente.",
             "🎴 As cartas indicam: você vai defender uma ideia ruim com muita confiança.",
@@ -116,7 +116,7 @@ async function startBot() {
 
     }
         // fofoca
-    if (text === "eskizitinha, qual a fofoca?") {
+    if (text === "fale uma fofoca eskizitinha") {
 
     const fofoca = fofocas[Math.floor(Math.random() * fofocas.length)]
 
