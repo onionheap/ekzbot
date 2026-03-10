@@ -1,0 +1,30 @@
+{
+  "mog": {
+    "trigger": ["mog", "mogged", "mogging"],
+    "reply": [
+      "hurr durrr",
+      "olha o incel falando de mog",
+      "vai tocar grama irmão",
+      "maxxing mental urgente"
+    ]
+  },
+
+  "incel": {
+    "trigger": ["incel", "blackpill", "looksmax", "looksmaxxing"],
+    "reply": [
+      "hurr durrr",
+      "mais um phd em redpill",
+      "touch grass imediatamente"
+    ]
+  },
+
+  "greetings": {
+    "trigger": ["bom dia", "boa tarde", "boa noite", "oi", "olá"],
+    "reply": [
+      "bom dia {user}",
+      "boa tarde {user}",
+      "oi {user}",
+      "salve {user}"
+    ]
+  }
+}
