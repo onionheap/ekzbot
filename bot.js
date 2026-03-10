@@ -11,6 +11,9 @@ const fofocas = require("./frases/fofoca.json")
 // tarot
 const tarot = require("./frases/tarot.json")
 
+// comments
+const comments = require("./frases/comments.json")
+
 async function startBot() {
 
     console.log("Obtendo servidor do Cytube...")
@@ -62,6 +65,30 @@ if (
     socket.emit("chatMsg", {
         msg: resposta
     })
+
+}
+
+    //comments
+
+        for (const key in comments) {
+
+    const data = comments[key]
+
+    for (const trigger of data.trigger) {
+
+        if (text.includes(trigger)) {
+
+            const resposta = data.reply[Math.floor(Math.random() * data.reply.length)]
+                .replace("{user}", msg.username)
+
+            socket.emit("chatMsg", {
+                msg: resposta
+            })
+
+            return
+        }
+
+    }
 
 }
 
