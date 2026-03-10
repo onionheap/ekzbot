@@ -5,6 +5,9 @@ const config = require("./config.json")
 // frases
 const eightBallReplies = require("./frases/8ball.json")
 
+// fofoca
+const fofocas = require("./frases/fofoca.json")
+
 async function startBot() {
 
     console.log("Obtendo servidor do Cytube...")
@@ -134,47 +137,3 @@ if (
 }
 
 startBot()
-
-const fofocas = [
-
-"🫖 FOFOCA: Dizem que Maru estava pesquisando 'como cozinhar tilápia romântica' às 3 da manhã.",
-"🫖 FOFOCA: Testemunhas afirmam que Maru tentou explicar TI no chat e ninguém entendeu nada.",
-"🫖 FOFOCA: Há rumores de que Maru ficou vermelho quando alguém mencionou o nome do Eskizo.",
-"🫖 FOFOCA: Alguém comentou que Maru estava vendo tutorial suspeito de femboy fashion.",
-
-"🫖 FOFOCA: Dom disse que ia estudar para ser bombeiro, mas acabou maratonando anime de menininhas.",
-"🫖 FOFOCA: Fontes cariocas dizem que Dom desviou de um tiroteio enquanto jogava LOL.",
-"🫖 FOFOCA: Dom prometeu largar o LOL… ontem… e hoje já está em outra partida.",
-
-"🫖 FOFOCA: Madruga tentou ensinar elétrica de novo e três alunos ligaram fase no neutro.",
-"🫖 FOFOCA: Madruga foi visto olhando anúncios de Brasília vermelha pela 47ª vez hoje.",
-"🫖 FOFOCA: Dizem que o vento quase levou Madruga embora de tão magro.",
-
-"🫖 FOFOCA: Bubuki disse que estava 'apenas desenhando', mas ninguém acredita nessa versão.",
-"🫖 FOFOCA: Dizem que Bubuki perdeu 40 minutos vendo vídeo de cavalo no TikTok.",
-"🫖 FOFOCA: Há rumores de que Bubuki está desenhando algo extremamente suspeito.",
-
-"🫖 FOFOCA: Pl0xxy disse que ia abrir um servidor revolucionário… mas esqueceu de abrir.",
-"🫖 FOFOCA: Fontes dizem que Pl0xxy estava bêbado planejando um império de Minecraft.",
-"🫖 FOFOCA: Dizem que Pl0xxy teve uma ideia genial… e esqueceu qual era.",
-
-"🫖 FOFOCA: Contente disse que ia fazer um doce incrível… mas acabou no turno do McDonald's.",
-"🫖 FOFOCA: Dizem que Contente tentou vender sacolé gourmet de novo.",
-"🫖 FOFOCA: Fontes dizem que Contente está julgando todo mundo silenciosamente.",
-
-"🫖 FOFOCA: Sabz tentou ficar 5 minutos sem falar… falhou.",
-"🫖 FOFOCA: Dizem que Sabz estava dando conselho de vida para metade do chat.",
-"🫖 FOFOCA: Fontes italianas confirmam que Sabz ainda está falando.",
-
-"🫖 FOFOCA: Milkie parecia quietinha… mas soltou uma piada sombria do nada.",
-"🫖 FOFOCA: Dizem que Milkie está planejando um cosplay secreto.",
-"🫖 FOFOCA: Milkie parece inocente… mas o humor dela entrega tudo.",
-
-"🫖 FOFOCA: Alguém aqui apagou uma mensagem muito rápido.",
-"🫖 FOFOCA: Dizem que duas pessoas no chat estão flertando e fingindo que não.",
-"🫖 FOFOCA: Há um plano duvidoso sendo organizado neste chat.",
-"🫖 FOFOCA: Alguém prometeu algo e agora está tentando mudar de assunto.",
-"🫖 FOFOCA: Alguém está digitando algo que vai se arrepender.",
-"🫖 FOFOCA: Fontes totalmente confiáveis dizem que vai dar confusão."
-
-];
