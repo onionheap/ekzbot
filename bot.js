@@ -40,8 +40,7 @@ async function startBot() {
 
     socket.on("chatMsg", (msg) => {
 
-    if (!msg || !msg.msg) return
-const text = msg.msg.trim().toLowerCase()
+    const text = msg.msg.trim()
 
     // 8BALL
     if (
@@ -117,20 +116,6 @@ const text = msg.msg.trim().toLowerCase()
 
     }
 
-        client.on("messageCreate", (message) => {
-
-if (message.author.bot) return;
-
-if (message.content.toLowerCase().includes("eskizitinha, qual a fofoca")) {
-
-    const fofoca = fofocas[Math.floor(Math.random() * fofocas.length)];
-
-    message.reply(fofoca);
-
-}
-
-});
-        
 })
 
 }
@@ -163,19 +148,7 @@ const eightBallReplies = [
 "Sim, mas a probabilidade é ofensiva.",
 "Não. Mas continue acreditando.",
 "O Maru deve responder isso."
-];
-
-const fofocas = [
-
-"🫖 FOFOCA: Dizem que Maru estava pesquisando 'como cozinhar tilápia romântica' às 3 da manhã.",
-"🫖 FOFOCA: Testemunhas afirmam que Maru tentou explicar TI no chat e ninguém entendeu nada.",
-"🫖 FOFOCA: Há rumores de que Maru ficou vermelho quando alguém mencionou o nome do Eskizo.",
-"🫖 FOFOCA: Alguém comentou que Maru estava vendo tutorial suspeito de femboy fashion.",
-
-"🫖 FOFOCA: Dom disse que ia estudar para ser bombeiro, mas acabou maratonando anime de menininhas.",
-"🫖 FOFOCA: Fontes cariocas dizem que Dom desviou de um tiroteio enquanto jogava LOL.",
-"🫖 FOFOCA: Dom prometeu largar o LOL… ontem… e hoje já está em outra partida.",
-
+]
 "🫖 FOFOCA: Madruga tentou ensinar elétrica de novo e três alunos ligaram fase no neutro.",
 "🫖 FOFOCA: Madruga foi visto olhando anúncios de Brasília vermelha pela 47ª vez hoje.",
 "🫖 FOFOCA: Dizem que o vento quase levou Madruga embora de tão magro.",
