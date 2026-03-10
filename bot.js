@@ -14,6 +14,8 @@ const tarot = require("./frases/tarot.json")
 // comments
 const comments = require("./frases/comments.json")
 
+let commentsCooldown = 0
+
 async function startBot() {
 
     console.log("Obtendo servidor do Cytube...")
@@ -52,6 +54,10 @@ async function startBot() {
 
     socket.on("chatMsg", (msg) => {
 
+if (!msg.msg) return
+
+if (msg.username === config.username) return
+    
     const text = msg.msg.trim()
 
     // 8BALL
@@ -68,15 +74,20 @@ if (
 
 }
 
-    //comments
-
-        for (const key in comments) {
+    // COMMENTS
+for (const key in comments) {
 
     const data = comments[key]
 
     for (const trigger of data.trigger) {
 
         if (text.includes(trigger)) {
+
+            const now = Date.now()
+
+            if (now < commentsCooldown) return
+
+            commentsCooldown = now + 15000 // 15 segundos
 
             const resposta = data.reply[Math.floor(Math.random() * data.reply.length)]
                 .replace("{user}", msg.username)
@@ -91,7 +102,6 @@ if (
     }
 
 }
-
     // tarot
     if (text.toLowerCase() === "eskizitinha, tarot!") {
 
