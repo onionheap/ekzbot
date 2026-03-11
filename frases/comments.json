@@ -5,26 +5,57 @@
       "hurr durrr",
       "olha o incel falando de mog",
       "vai tocar grama irmão",
-      "maxxing mental urgente"
+      "gíria de mongolão"
     ]
   },
 
   "incel": {
-    "trigger": ["incel", "blackpill", "looksmax", "looksmaxxing"],
+    "trigger": ["incel", "blackpill", "maxxing", "looksmax", "looksmaxxing"],
     "reply": [
       "hurr durrr",
       "mais um phd em redpill",
-      "touch grass imediatamente"
+      "touch grass imediatamente",
+      "olha aí o {user} com gíria de retardado"
     ]
   },
 
-  "greetings": {
-    "trigger": ["bom dia", "boa tarde", "boa noite", "oi", "olá"],
+  "bom dia": {
+    "trigger": ["bom dia"],
     "reply": [
       "bom dia {user}",
-      "boa tarde {user}",
+      "E que belo dia {user}",
       "oi {user}",
       "salve {user}"
+    ]
+  },
+   
+  "bom tarde": {
+    "trigger": ["bom dia"],
+    "reply": [
+      "bom tarde {user}",
+      "tarde boa {user}",
+      "oi {user}",
+      "boa tarde"
+    ]
+  },
+
+  "boa noite": {
+    "trigger": ["boa noite","bonoite"],
+    "reply": [
+      "boa noite {user}",
+      "noitinha {user}",
+      "noite? já ta escuro? nem vi",
+      "boa noite"
+    ]
+  },
+
+  "oi": {
+    "trigger": ["oi","ola"],
+    "reply": [
+      "oii {user}",
+      "e aí {user}",
+      "{player} has arrived!",
+      "chegou o vagabundo"
     ]
   }
 }
