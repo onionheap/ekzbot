@@ -1,6 +1,7 @@
 const io = require("socket.io-client")
 const fetch = require("node-fetch")
 const config = require("./config.json")
+let botStartTime = Date.now()
 
 // frases
 const eightBallReplies = require("./frases/8ball.json")
@@ -54,6 +55,8 @@ async function startBot() {
 
     socket.on("chatMsg", (msg) => {
 
+if (msg.time && msg.time < botStartTime) return
+        
 if (!msg.msg) return
 
 if (msg.username === config.username) return
