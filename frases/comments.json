@@ -70,11 +70,11 @@
   },
 
   "oi": {
-    "trigger": ["oi","ola"],
+    "trigger": ["oi"],
     "reply": [
       "oii {user}",
       "e aí {user}",
-      "aaand {player} has arrived!",
+      "aaand {user} has arrived!",
       "chegou o vagabundo"
     ]
   }
