@@ -57,6 +57,8 @@ async function startBot() {
 if (!msg.msg) return
 
 if (msg.username === config.username) return
+
+if (msg.username === "[server]") return
     
     const text = msg.msg.trim()
 
