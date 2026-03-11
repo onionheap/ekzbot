@@ -39,7 +39,27 @@
     ]
   },
 
-  "boa noite": {
+  "brasil": {
+    "trigger": ["brasil"],
+    "reply": [
+      "CUZIL",
+      "BOSTIL",
+      "BANANIL",
+      "PRETIL"
+    ]
+  },
+
+  "minecraft": {
+    "trigger": ["minecraft"],
+    "reply": [
+      "pô {player}, falando de bloquinho novamente?",
+      "salve notch",
+      "morte ao jeb"
+    ]
+    
+  },
+  
+  "boa ": {
     "trigger": ["boa noite","bonoite"],
     "reply": [
       "boa noite {user}",
@@ -54,7 +74,7 @@
     "reply": [
       "oii {user}",
       "e aí {user}",
-      "{player} has arrived!",
+      "aaand {player} has arrived!",
       "chegou o vagabundo"
     ]
   }
