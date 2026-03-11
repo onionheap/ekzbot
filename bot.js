@@ -83,7 +83,8 @@ for (const key in comments) {
 
     for (const trigger of data.trigger) {
 
-        if (text.includes(trigger)) {
+        const regex = new RegExp(`\\b${trigger}\\b`, "i")
+if (regex.test(text)) {
 
             const now = Date.now()
 
