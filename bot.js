@@ -9,9 +9,8 @@ const config = {
     }
 
 let botStartTime = Date.now()
-
 let lastLog=""
-let userCooldown={}
+let userCooldowns={}
 let lastVideo=""
 
 // frases
