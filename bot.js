@@ -17,6 +17,11 @@ const comments = require("./frases/comments.json")
 
 let commentsCooldown = 5000
 
+// cooldown por usuário (24h)
+const userDailyCooldown = {}
+
+const DAY = 24 * 60 * 60 * 1000
+
 async function startBot() {
 
     console.log("Obtendo servidor do Cytube...")
@@ -65,6 +70,49 @@ if (msg.username === "[server]") return
     
     const text = msg.msg.trim()
 
+        // MORRER HOJE
+if (text === "eskizitinha, qual a chance de morrer hoje?") {
+
+    const now = Date.now()
+
+    if (userDailyCooldown[msg.username] && now - userDailyCooldown[msg.username] < DAY) {
+        socket.emit("chatMsg", {
+            msg: `${msg.username}, o destino já foi consultado hoje.`
+        })
+        return
+    }
+
+    userDailyCooldown[msg.username] = now
+
+    const chance = Math.floor(Math.random() * 101)
+
+    socket.emit("chatMsg", {
+        msg: `${msg.username}, sua chance de morrer hoje é ${chance}%`
+    })
+
+}
+
+        // ATRAENTE HOJE
+if (text === "Qual a minha gostosura hoje?") {
+
+    const now = Date.now()
+
+    if (userDailyCooldown[msg.username] && now - userDailyCooldown[msg.username] < DAY) {
+        socket.emit("chatMsg", {
+            msg: `${msg.username}, calma lá, é só uma vez por dia.`
+        })
+        return
+    }
+
+    userDailyCooldown[msg.username] = now
+
+    const porcentagem = Math.floor(Math.random() * 101)
+
+    socket.emit("chatMsg", {
+        msg: `${msg.username}, hoje você está ${porcentagem}% gostoso.`
+    })
+
+}
     // 8BALL
 if (
     text.toLowerCase().startsWith("eskizitinha") &&
