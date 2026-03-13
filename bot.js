@@ -7,6 +7,9 @@ const config = {
     password: process.env.CYTUBE_PASSWORD,
     discordWebhook: process.env.DISCORD_WEBHOOK
     }
+console.log("USER:", config.username)
+console.log("PASS:", config.password ? "OK" : "VAZIO")
+
 let botStartTime = Date.now()
 
 // frases
