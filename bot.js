@@ -22,6 +22,26 @@ const userDailyCooldown = {}
 
 const DAY = 24 * 60 * 60 * 1000
 
+async function sendDiscordLog(message) {
+
+    try {
+
+        await fetch(config.discordWebhook, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                content: message
+            })
+        })
+
+    } catch (err) {
+        console.log("Erro ao enviar log para Discord:", err)
+    }
+
+}
+
 async function startBot() {
 
     console.log("Obtendo servidor do Cytube...")
@@ -69,6 +89,8 @@ if (msg.username === config.username) return
 if (msg.username === "[server]") return
     
     const text = msg.msg.trim()
+
+    sendDiscordLog(`💬 **${msg.username}:** ${msg.msg}`)
 
         // MORRER HOJE
 if (text === "qual a chance de morrer hoje?") {
@@ -178,6 +200,12 @@ if (regex.test(text)) {
     })
 
 }
+
+        socket.on("addUser",(user)=>{if(!user||!user.name)return;sendDiscordLog(`🟢 **${user.name} entrou no canal**`)})
+socket.on("userLeave",(user)=>{if(!user||!user.name)return;sendDiscordLog(`🔴 **${user.name} saiu do canal**`)})
+socket.on("clearchat",()=>{sendDiscordLog(`🧹 **O chat foi limpo por um moderador**`)})
+socket.on("changeMedia",(media)=>{if(!media)return;let link="";if(media.type==="yt")link=`https://youtu.be/${media.id}`;sendDiscordLog(`🎬 **Novo vídeo:** ${media.title}\n${link}`)})
+socket.on("mediaUpdate",()=>{sendDiscordLog(`⏭️ **O vídeo foi pulado**`)})
 
 })
 
