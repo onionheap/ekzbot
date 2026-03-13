@@ -212,8 +212,6 @@ if (regex.test(text)) {
 socket.on("userLeave",(user)=>{if(!user||!user.name)return;sendDiscordLog(`🔴 **${user.name} saiu do canal**`)})
 socket.on("clearchat",()=>{sendDiscordLog(`🧹 **O chat foi limpo por um moderador**`)})
 socket.on("changeMedia",(media)=>{if(!media)return;let link="";if(media.type==="yt")link=`https://youtu.be/${media.id}`;sendDiscordLog(`🎬 **Novo vídeo:** ${media.title}\n${link}`)})
-socket.on("mediaUpdate",()=>{sendDiscordLog(`⏭️ **O vídeo foi pulado**`)})
-
 })
 
 }
