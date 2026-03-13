@@ -71,8 +71,9 @@ if (msg.username === "[server]") return
     const text = msg.msg.trim()
 
         // MORRER HOJE
-if (text === "eskizitinha, qual a chance de morrer hoje?") {
+if (text === "qual a chance de morrer hoje?") {
 
+    const key = msg.username + "_morte"
     const now = Date.now()
 
     if (userDailyCooldown[msg.username] && now - userDailyCooldown[msg.username] < DAY) {
@@ -95,6 +96,7 @@ if (text === "eskizitinha, qual a chance de morrer hoje?") {
         // ATRAENTE HOJE
 if (text === "Qual a minha gostosura hoje?") {
 
+    const key = msg.username + "_goatosura"
     const now = Date.now()
 
     if (userDailyCooldown[msg.username] && now - userDailyCooldown[msg.username] < DAY) {
