@@ -1,12 +1,13 @@
 const io = require("socket.io-client")
 const fetch = require("node-fetch")
 const config = {
+    const config = {
     server: process.env.CYTUBE_SERVER || "https://cytu.be",
-    channel: process.env.CYTUBE_CHANNEL,
+    channel: process.env.CYTUBE_CHANNEL || "RadioEKZ",
     username: process.env.CYTUBE_USERNAME,
     password: process.env.CYTUBE_PASSWORD,
     discordWebhook: process.env.DISCORD_WEBHOOK
-}
+    }
 let botStartTime = Date.now()
 
 // frases
