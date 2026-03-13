@@ -1,7 +1,7 @@
 const io = require("socket.io-client")
 const fetch = require("node-fetch")
 const config = {
-    server: process.env.CYTUBE_SERVER,
+    server: process.env.CYTUBE_SERVER || "https://cytu.be",
     channel: process.env.CYTUBE_CHANNEL,
     username: process.env.CYTUBE_USERNAME,
     password: process.env.CYTUBE_PASSWORD,
