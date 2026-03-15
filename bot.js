@@ -208,6 +208,9 @@ socket.on("userLeave",(user)=>{if(!user||!user.name)return;let now=Date.now();if
 socket.on("clearchat",()=>{sendDiscordLog(`🧹 **O chat foi limpo por um moderador**`)})
 
 socket.on("changeMedia",(media)=>{if(!media)return;if(media.title===lastVideo)return;lastVideo=media.title;let link="";if(media.type==="yt")link=`https://youtu.be/${media.id}`;sendDiscordLog(`🎬 **Novo vídeo:** ${media.title}\n${link}`)})
-        
+
+        })
+}
+
 startBot()
         
