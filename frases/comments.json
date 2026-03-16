@@ -1,6 +1,6 @@
 {
   "mog": {
-    "trigger": ["mog", "mogged", "mogging"],
+    "trigger": [""],
     "reply": [
       "hurr durrr",
       "olha o incel falando de mog",
@@ -10,7 +10,7 @@
   },
 
   "incel": {
-    "trigger": ["incel", "blackpill", "maxxing", "looksmax", "looksmaxxing"],
+    "trigger": ["incel"],
     "reply": [
       "hurr durrr",
       "mais um phd em redpill",
